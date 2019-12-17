@@ -5,16 +5,19 @@
     if (isset($_POST["soumettre"])){
         $email = $_POST['email'];
         $password = $_POST['motdepasse'];
-        $stmt = $pdo->prepare("SELECT * FROM utilisateurs where email=:email AND motdepasse=:motdepasse");
+        $stmt = $connection->prepare("SELECT * FROM utilisateurs where email=:email AND motdepasse=:motdepasse");
         $data = [
             "email" => $email,
-            "motdepasse" => md5($motdepasse)
+            "motdepasse" => md5($password)
         ];
-        $sql = $stmt->execute($data);
-        if ($row = $sql->fetch()){
-
+        $stmt->execute($data);
+        if ($row = $stmt->fetch()){
+            if (strcmp($row['poste'], "superadministrateur") == 0){
+                $successConnexion = "<p class='green'>Utilisateur superadmnistrateur detecté.</p>";
+                header("location:validatesuperviseurs.php");
+            }
         }else{
-
+            $successConnexion = "<p class='red'>Aucun utilisateur trouvé.</p>";
         }
     }
 ?>
@@ -46,7 +49,10 @@
                     <label>
                         Mot de passe : 
                     </label>
-                    <input class="form-control" type="text" name="motdepasse" />
+                    <input class="form-control" type="password" name="motdepasse" />
+                </div>
+                <div>
+                    <?php echo $successConnexion; ?>
                 </div>
                 <div>
                     <input class="btn btn-primary" type="submit" value="Soumettre" name="soumettre" />

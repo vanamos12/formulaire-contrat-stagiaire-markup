@@ -5,6 +5,9 @@
 4-Beautiful bootstraps forms
 https://mdbootstrap.com/docs/jquery/forms/basic/
 5-Address the problem input not 100% when with <100px (responsive design)
+6-Penser aux sessions, au bouton de  déconnection et au footer
+7-Penser au logo de Markup à l'intérieur de l'application
+8-Penser au bouton voir les contrats stagiaires dans validatesuperviseurs.php
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur

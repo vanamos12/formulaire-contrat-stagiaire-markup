@@ -31,12 +31,16 @@
         if (strcmp($errors, "<ul class='red'></ul>") == 0){
             // We safeguard information in the database
             $stmt = $connection->prepare("INSERT INTO utilisateurs(nom, email, motdepasse, poste, valide) VALUES(:nom, :email, :motdepasse, :poste, :valide)");
+            $valide = "oui";
+            if (strcmp($poste, "superviseur") == 0){
+                $valide = "non";
+            }
             $data = [
                 "nom"=>$nom,
                 "email"=>$email,
                 "motdepasse"=>md5($motdepasse),
                 "poste"=>$poste,
-                "valide"=>"non"
+                "valide"=>$valide
             ];
             if ($stmt->execute($data)){
                 $succesInscription = "<p class='green'>Inscription réussie, vous pouvez maitenant vous <a href='index.php'>connecter</a>.</p>";
