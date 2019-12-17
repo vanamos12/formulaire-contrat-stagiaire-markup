@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $servername = "localhost";
     $database = "stagiairemarkup";
     $dsn = "mysql:host=$servername;dbname=$database";

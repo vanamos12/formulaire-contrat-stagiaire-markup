@@ -12,9 +12,15 @@
         ];
         $stmt->execute($data);
         if ($row = $stmt->fetch()){
+            $_SESSION['idUtilisateur'] = $row['idUtilisateur'];
             if (strcmp($row['poste'], "superadministrateur") == 0){
                 $successConnexion = "<p class='green'>Utilisateur superadmnistrateur detecté.</p>";
+                $_SESSION['poste'] = "superadministrateur";
                 header("location:validatesuperviseurs.php");
+            }else if(strcmp($row['poste'], "stagiaire")==0){
+                $successConnexion = "<p class='green'>Utilisateur stagiaire detecté.</p>";
+                $_SESSION['poste'] = "stagiaire";
+                header("location:listecontratstagiaire.php");
             }
         }else{
             $successConnexion = "<p class='red'>Aucun utilisateur trouvé.</p>";
