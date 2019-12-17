@@ -1,0 +1,11 @@
+1-Le superviseur de Markup ou le stagiaire doit avoir une page
+ à laquelle il doit être dirigé quand il arrive à la page d'index.
+2-Chaque utilisateur (superviseur,stagiaire) doit être authentifié
+3-Valider le superviseur lors de l'inscription.
+4-Beautiful bootstraps forms
+https://mdbootstrap.com/docs/jquery/forms/basic/
+5-Address the problem input not 100% when with <100px (responsive design)
+
+Name         Email                       Password          role
+Foloum       foloum@groupemarkup.com     fidele            superadministrateur
+Hermann      pokatchoneng@gmail.com      vanamos           superviseur
