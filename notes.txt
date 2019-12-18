@@ -11,6 +11,7 @@ https://mdbootstrap.com/docs/jquery/forms/basic/
 9-Penser au responsive design de chaque page.
 10-Quand la liste est vide, penser à mettre aucune entrée.(validate superviseur, voir contrat stagiaires)
 11-Penser à mettre un champ complété ou non dans la liste des offres stagiaires
+12-Penser à mettre à jour le nom du contrat : nom utilisteur + idContrat
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur

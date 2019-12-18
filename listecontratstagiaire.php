@@ -48,7 +48,7 @@
 
                 $query = $connection->prepare("select * from contratstagiaires where idStagiaire=:idStagiaire");
 
-                $query->execute(["idStagiaire"=>$_SESSION["idUtilisateur"]]);
+                $query->execute(["idStagiaire"=>$_SESSION["utilisateur"]["idUtilisateur"]]);
 
                 while($row = $query->fetch()){
 
@@ -65,7 +65,7 @@
 
                 <td><?php echo $row['datecreation']; ?></td>
 
-                <td><?php echo $row['datecreation']; ?></td>
+                <td><?php echo $row['statut']; ?></td>
 
                 <!--<td><?php //echo $row['Bref']; ?></td>-->
 
