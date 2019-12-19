@@ -69,7 +69,7 @@
 
                 <!--<td><?php //echo $row['Bref']; ?></td>-->
 
-                <td> <a href="continuerremplircontratstage.php" class="btn btn-success">Continuer</a>
+                <td> <a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>" class="btn btn-success">Continuer</a>
                 </td>
 
             </tr>
