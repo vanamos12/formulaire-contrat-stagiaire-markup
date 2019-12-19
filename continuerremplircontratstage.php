@@ -22,6 +22,12 @@
         $_SESSION["etape"]["actualpage"] = $row["actualpage"];
         $_SESSION["etape"]["nextpage"] = $row["nextpage"];
         $_SESSION["etape"]["idNextEtape"] = $row["idNextEtape"];
+
+        // We indicate that we go at another stage
+        $sql = $connection->prepare("UPDATE contratstagiaires 
+                                        SET etape=:etape
+                                        WHERE idContrat=:idcontrat");
+        $sql->execute(["etape"=>$row["idEtape"], "idcontrat"=>$_SESSION["etape"]["idContrat"]]);
         header("location:".$row["actualpage"]);
 
     }
