@@ -29,7 +29,7 @@
         <div class="inscription-form">
             <form action="" method="POST">
                 <h5>LE/LA Stagiaire</h5>
-                <canvas id="sinaturestagiaire" width="250" height="200"></canvas>
+                <canvas id="signaturestagiaire" width="250" height="200"></canvas>
             </form>
         </div>
     </div>
@@ -40,9 +40,39 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            function drawPoint(x, y, ){
+            var canvas = document.getElementById("signaturestagiaire")
+            var ctx = canvas.getContext("2d");
+            function draw(){
 
             }
+            function mouseDown(e){
+                console.log("We pressed the mouse");
+                var relativeX = e.clientX - canvas.offsetLeft;
+                var relativeY = e.clientY - canvas.offsetTop;
+                //console.log("relativeY", relativeY);
+                //console.log("e.clientY", e.clientY)
+                console.log("canvas.offsetTop", canvas.offsetTop)
+                console.log("canvas.offsetHeight", canvas.offsetHeight)
+
+                console.log("e.offsetX", e.offsetX);
+                console.log("e.offsetY", e.offsetY);
+                console.log("e.pageX", e.pageX);
+                console.log("e.pageY", e.pageY);
+                //console.log("e.clientX", e.clientX);
+                
+                if (relativeX>=0 && relativeX<=canvas.width){
+                    console.log("I am in a canvas width");
+                    if (relativeY>=0 && relativeY <= canvas.height){
+                        console.log("I am in a canvas height");
+                    }
+                }
+            }
+            function mouseUp(e){
+                console.log("We release the mouses");
+            }
+            canvas.addEventListener("mousedown", mouseDown, false)
+            canvas.addEventListener("mouseup", mouseUp, false)
+            var interval = setInterval(draw, 10);
         })
     </script>
 
