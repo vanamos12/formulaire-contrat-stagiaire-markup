@@ -28,10 +28,23 @@
         </div>
         <div class="inscription-form">
             <form action="" method="POST">
-                <h3>LE/LA Stagiaire</h3>
-                <canvas width="100" height="100"></canvas>
+                <h5>LE/LA Stagiaire</h5>
+                <canvas id="sinaturestagiaire" width="250" height="200"></canvas>
             </form>
         </div>
     </div>
+
+    <script type="text/javascript" src="js/jquery3.3.1.js">
+    </script>
+    <script type="text/javascript" src="js/app.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function drawPoint(x, y, ){
+
+            }
+        })
+    </script>
+
 </body>
 </html>
