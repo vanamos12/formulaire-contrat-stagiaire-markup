@@ -17,7 +17,14 @@ https://mdbootstrap.com/docs/jquery/forms/basic/
 14-Penser à une barre qui va indiquer le pourcentage de progression dans les formulaires
     Un element de la table etapes
 15-Penser lorsqu'il y a erreur à remettre les anciennes valeurs dans les cases
-16-IdContrat de la table partieB doit être unique.
+16-La colonne IdContrat de la table partieB doit être unique.
+17-date debut et fin de stage du formulaire partied doivent inclure une completion automatique
+et les valider.
+18-horairessemainestage de la partied doit être un widget.
+    horairesjourneestage -||-
+19-Dans les formualires, les erreurs doivent être juste au dessous des champs.
+20-idContrat de la table partied devrait avoir la contrainte unique dans Mysql
+21-Ne pas oublier toutes les foreign keys dans les tables Mysql
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur

@@ -25,6 +25,12 @@
     color:green;
 }
 
+canvas {
+    background:#eee; 
+    display:block; 
+    margin:0 auto;
+}
+
 @media (max-width : 700px){
     .inscription-form{
         width: 80%;

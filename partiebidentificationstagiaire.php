@@ -70,9 +70,8 @@
                 "telephonestagiaire"=>$telephone,
                 "emailstagiaire"=>$email
             ];
-            print_r($data);
             if ($stmt->execute($data)){
-                $succesInscription = "<p class='green'>Inscription réussie, vous pouvez maitenant vous <a href='index.php'>connecter</a>.</p>";
+                $succesInscription = "<p class='green'>Enregistrement effectué!</p>";
                 header("location:continuerremplircontratstage.php");
             }else{
                 $succesInscription = "<p class='red'>Echec de l'enregistrement, veuillez réessayer.</p>"; 
