@@ -29,3 +29,7 @@ et les valider.
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
 Hermann      pokatchoneng@gmail.com      vanamos           superviseur
+
+Links signature pad 
+https://www.jqueryscript.net/other/Canvas-Signature-Pad-Sign.html
+https://github.com/szimek/signature_pad

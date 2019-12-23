@@ -42,37 +42,40 @@
         $(document).ready(function(){
             var canvas = document.getElementById("signaturestagiaire")
             var ctx = canvas.getContext("2d");
+            var mouseClickedIncanvas = false;
+            var mouseX = 0;
+            var mouseY = 0;
             function draw(){
-
+                drawSignature();
+            }
+            function drawSignature(){
+                if (mouseClickedIncanvas){
+                    ctx.font = "20px Arial"
+                    ctx.fillStyle = "#000000"
+                    ctx.fillText(".", mouseX, mouseY)
+                }
+                requestAnimationFrame(draw)
             }
             function mouseDown(e){
-                console.log("We pressed the mouse");
-                var relativeX = e.clientX - canvas.offsetLeft;
-                var relativeY = e.clientY - canvas.offsetTop;
-                //console.log("relativeY", relativeY);
-                //console.log("e.clientY", e.clientY)
-                console.log("canvas.offsetTop", canvas.offsetTop)
-                console.log("canvas.offsetHeight", canvas.offsetHeight)
-
-                console.log("e.offsetX", e.offsetX);
-                console.log("e.offsetY", e.offsetY);
-                console.log("e.pageX", e.pageX);
-                console.log("e.pageY", e.pageY);
-                //console.log("e.clientX", e.clientX);
+                mouseClickedIncanvas = true;
                 
-                if (relativeX>=0 && relativeX<=canvas.width){
-                    console.log("I am in a canvas width");
-                    if (relativeY>=0 && relativeY <= canvas.height){
-                        console.log("I am in a canvas height");
-                    }
-                }
             }
             function mouseUp(e){
-                console.log("We release the mouses");
+                if (mouseClickedIncanvas){
+                    mouseClickedIncanvas = false
+                }
+            }
+            function mouseMove(e){
+                mouseX = e.offsetX;
+                mouseY = e.offsetY;
+
+                console.log("mouseX", mouseX);
+                console.log("mouseY", mouseY);
             }
             canvas.addEventListener("mousedown", mouseDown, false)
-            canvas.addEventListener("mouseup", mouseUp, false)
-            var interval = setInterval(draw, 10);
+            canvas.addEventListener("mousemove", mouseMove, false)
+            document.addEventListener("mouseup", mouseUp, false)
+            //var interval = setInterval(draw, 1);
         })
     </script>
 
