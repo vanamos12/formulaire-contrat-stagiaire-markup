@@ -21,6 +21,12 @@
                 $successConnexion = "<p class='green'>Utilisateur stagiaire detecté.</p>";
                 //$_SESSION['poste'] = "stagiaire";
                 header("location:listecontratstagiaire.php");
+            }else if (strcmp($row['poste'], "superviseur")==0){
+                if (strcmp($row['valide'], "oui") == 0){
+                    header("location:listecontratsuperviseur.php");
+                }else{
+                    $successConnexion = "<p class='red'>Demandez au directeur général de vous valider en premier lieu.</p>";
+                }
             }
         }else{
             $successConnexion = "<p class='red'>Aucun utilisateur trouvé.</p>";

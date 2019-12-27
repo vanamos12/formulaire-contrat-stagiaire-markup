@@ -8,20 +8,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>Contrat de stage</h1>
-        <h2>Partie E - Planification de l'encadrement / supervision du stagiaire</h2>
-        <p> L’encadreur du stagiaire est charg&eacute;e de :</p>
-        <ul>
-            <li>Donner des consignes au stagiaire;</li>
-            <li>&Eacute;valuer le travail du stagiaire</li>
-            <li>Fournir au stagiaire une r&eacute;troaction sur le travail accompli;</li>
-            <li>Dispenser une formation ou un entra&icirc;nement au stagiaire.</li>
-        </ul>
-        <h2>Partie G - Signatures</h2>
-        <form action="" method="POST">
-            <h3>Le Directeur G&eacute;n&eacute;ral</h3>
-            <canvas width="100" height="100"></canvas>
-        </form>
+    <div class="title">
+            <h1>Contrat de stage</h1>
+            <h2>Partie E - Planification de l'encadrement / supervision du stagiaire</h2>
+        </div>
+        <div class="inscription-form">
+            <p> L’encadreur du stagiaire est charg&eacute;e de :</p>
+            <ul>
+                <li>Donner des consignes au stagiaire;</li>
+                <li>&Eacute;valuer le travail du stagiaire</li>
+                <li>Fournir au stagiaire une r&eacute;troaction sur le travail accompli;</li>
+                <li>Dispenser une formation ou un entra&icirc;nement au stagiaire.</li>
+            </ul>
+        </div>
+        <div class="title">
+            <h2>Partie G - Signatures</h2>
+        </div>
+        <div class="inscription-form">
+            <h5>LE Directeur général</h5>
+            <canvas id="signaturesuperviseur" width="250" height="200"></canvas>
+            <button class ="btn btn-primary" id="resetSign">Effacer</button>
+            <button class="btn btn-primary" id="savesignature">Sauvegarder</button>
+        </div>
     </div>
 </body>
 </html>

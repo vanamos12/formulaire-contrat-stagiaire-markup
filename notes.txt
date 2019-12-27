@@ -25,6 +25,7 @@ et les valider.
 19-Dans les formualires, les erreurs doivent être juste au dessous des champs.
 20-idContrat de la table partied devrait avoir la contrainte unique dans Mysql
 21-Ne pas oublier toutes les foreign keys dans les tables Mysql
+22-Penser à créer des constanates pour remplacer superviseur et stagiaire
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
@@ -33,3 +34,8 @@ Hermann      pokatchoneng@gmail.com      vanamos           superviseur
 Links signature pad 
 https://www.jqueryscript.net/other/Canvas-Signature-Pad-Sign.html
 https://github.com/szimek/signature_pad
+
+Status d'un contrat
+-En attente stagiaire
+-En attente superviseur
+-Signé

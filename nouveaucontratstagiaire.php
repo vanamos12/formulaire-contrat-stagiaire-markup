@@ -9,14 +9,15 @@
     $idContrat = $row["AUTO_INCREMENT"];
 
     $stmt = $connection->prepare("INSERT INTO 
-        contratstagiaires(idStagiaire, nomcontrat, statut, etape)
-        VALUES(:idUtilisateur, :nomcontrat, :statut, :etape)");
+        contratstagiaires(idStagiaire, nomcontrat, statut, etape, etapesuperviseur)
+        VALUES(:idUtilisateur, :nomcontrat, :statut, :etape, :etapesuperviseur)");
     
     $data = [
         "idUtilisateur"=>$_SESSION['utilisateur']['idUtilisateur'],
         "nomcontrat"=>$_SESSION['utilisateur']['nom']." - ".$idContrat,
         "statut"=>"En attente stagiaire",
-        "etape"=>1
+        "etape"=>BEGIN_ETAPE_STAGIAIRE,
+        "etapesuperviseur"=>BEGIN_ETAPE_SUPERVISEUR
     ];
     $stmt->execute($data);
 

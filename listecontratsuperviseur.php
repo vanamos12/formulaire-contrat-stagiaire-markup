@@ -18,7 +18,6 @@
             <h2>Liste des contrats stagiaires</h2>
         </div>
         <div class="list-contrats-stagiaires">
-        <a href="nouveaucontratstagiaire.php" class="btn btn-success">Créer un nouveau contrat</a>
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 
             <thead>
@@ -46,9 +45,9 @@
 
             <?php
 
-                $query = $connection->prepare("select * from contratstagiaires where idStagiaire=:idStagiaire");
+                $query = $connection->prepare("select * from contratstagiaires");
 
-                $query->execute(["idStagiaire"=>$_SESSION["utilisateur"]["idUtilisateur"]]);
+                $query->execute();
 
                 while($row = $query->fetch()){
 
@@ -69,7 +68,7 @@
 
                 <!--<td><?php //echo $row['Bref']; ?></td>-->
 
-                <td> <a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=stagiaire" class="btn btn-success">Continuer</a>
+                <td> <a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=superviseur" class="btn btn-success">Continuer</a>
                 </td>
 
             </tr>
