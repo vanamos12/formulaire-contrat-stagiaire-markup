@@ -29,31 +29,56 @@
         <div class="inscription-form">
             <h5>LE/LA Stagiaire</h5>
             <canvas id="signaturestagiaire" width="250" height="200"></canvas>
-            <button class ="btn btn-primary" id="resetSign">Annuler</button>
-        
+            <button class ="btn btn-primary" id="resetSign">Effacer</button>
+            <button class="btn btn-primary" id="savesignature">Sauvegarder</button>
         </div>
     </div>
 
-    <script type="text/javascript" 
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-            crossorigin="anonymous">
+    <script type="text/javascript" src="js/signature-pad.js"> 
+    </script>
+    <script type="text/javascript" src="js/jquery3.4.1.js"> 
     </script>
     <script type="text/javascript" src="js/app.js">
     </script>
-    <script type="text/javascript" src="js/sign.js">
-    </script>
+    
     <script type="text/javascript">
-        $(document).ready(function(){
-            console.log("page fully loaded.");
-           $('#signaturestagiaire').sign({
-               resetButton: $('#resetSign'),
-               lineWidth: 20,
-               width:250,
-               height:200
-           })
-           console.dir({"hello": "Myhello"})
-        })
+        
+        var canvas = document.querySelector('canvas')
+        var signaturePad = new SignaturePad(canvas)
+        signaturePad.minWidth = 1
+        signaturePad.maxWidth = 2
+        signaturePad.penColor = "rgba(0, 0, 0, 1)"
+        
+        function recommencer(){
+            signaturePad.clear()
+        }
+        function savesignature(){
+            if (signaturePad.isEmpty()){
+                alert("Vous devez obligatoirement signer le document.");
+            }else{
+                var image = signaturePad.toDataURL();
+                $.ajax({
+                    url:'registersignature.php',
+                    method:'POST',
+                    data:{type:'stagiaire', image:image},
+                    success:function(data){
+                        data = JSON.parse(data)
+                        if (data['status'] === "success"){
+                            window.location.href = "listecontratstagiaire.php";
+                            //alert("Les données ont été bien savegardées.")
+                        }
+                        
+                    },
+                    error: function(){
+                        alert("Données non sauvegardées; veuillez réessayer.")
+                    }
+                })
+            }
+        }
+        var reset = document.getElementById('resetSign')
+        reset.addEventListener("click", recommencer)
+        var sauvegarder = document.getElementById('savesignature')
+        sauvegarder.addEventListener("click", savesignature)
     </script>
 
 </body>
