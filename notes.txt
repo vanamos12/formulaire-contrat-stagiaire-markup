@@ -29,6 +29,7 @@ et les valider.
 23-Penser à faire apparaître les erreurs avec animation
 24-Résoudre le problème de caractères d'enregsitrement qui devient invalide dans l'enregsitrement Mysql
 25-Eviter les recopies de code header footer code javascript signature dans deux pagefinale...
+26-Bien arranger l'affichage du contrat dûment rempli
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
