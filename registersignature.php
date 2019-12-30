@@ -1,9 +1,9 @@
 <?php
     include "db.php";
-
+    $listOfTypes = ["stagiaire", "superviseur"];
     if (isset($_POST['type'])){
         $type = $_POST['type'];
-        if (strcmp($type, "stagiaire") == 0){
+        if (in_array($type, $listOfTypes)){
             $stmt = $connection->prepare("INSERT INTO signatures(poste, imageURL, idContrat)
                                                     VALUES(:poste, :imageURL, :idContrat)");
             $data = [

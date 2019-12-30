@@ -68,7 +68,20 @@
 
                 <!--<td><?php //echo $row['Bref']; ?></td>-->
 
-                <td> <a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=superviseur" class="btn btn-success">Continuer</a>
+                <td>
+                    <?php
+                        if ($row['etape'] == LAST_ETAPE && $row['etapesuperviseur'] == LAST_ETAPE){
+                    ?>
+                    <a href="voircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=superviseur" class="btn btn-warning">Voir Contrat</a>
+                    <?php
+                        }
+                        else if ($row['etapesuperviseur'] != LAST_ETAPE){ 
+                    ?>
+                    <a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=superviseur" class="btn btn-success">Continuer</a>
+                    <?php
+                        }
+                    ?> 
+                    <!--<a href="continuerremplircontratstage.php?id=<?php echo $row['idContrat']; ?>&poste=superviseur" class="btn btn-success">Continuer</a>-->
                 </td>
 
             </tr>

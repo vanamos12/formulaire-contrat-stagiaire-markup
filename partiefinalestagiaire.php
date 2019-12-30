@@ -64,7 +64,7 @@
                     success:function(data){
                         data = JSON.parse(data)
                         if (data['status'] === "success"){
-                            window.location.href = "listecontratstagiaire.php";
+                            window.location.href = "continuerremplircontratstage.php";
                             //alert("Les données ont été bien savegardées.")
                         }
                         

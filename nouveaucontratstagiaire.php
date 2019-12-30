@@ -15,7 +15,7 @@
     $data = [
         "idUtilisateur"=>$_SESSION['utilisateur']['idUtilisateur'],
         "nomcontrat"=>$_SESSION['utilisateur']['nom']." - ".$idContrat,
-        "statut"=>"En attente stagiaire",
+        "statut"=>EN_ATTENTE_STAGIAIRE,
         "etape"=>BEGIN_ETAPE_STAGIAIRE,
         "etapesuperviseur"=>BEGIN_ETAPE_SUPERVISEUR
     ];

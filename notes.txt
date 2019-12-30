@@ -26,6 +26,9 @@ et les valider.
 20-idContrat de la table partied devrait avoir la contrainte unique dans Mysql
 21-Ne pas oublier toutes les foreign keys dans les tables Mysql
 22-Penser à créer des constanates pour remplacer superviseur et stagiaire
+23-Penser à faire apparaître les erreurs avec animation
+24-Résoudre le problème de caractères d'enregsitrement qui devient invalide dans l'enregsitrement Mysql
+25-Eviter les recopies de code header footer code javascript signature dans deux pagefinale...
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
