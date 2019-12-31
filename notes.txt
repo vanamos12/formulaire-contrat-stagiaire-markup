@@ -29,8 +29,9 @@ et les valider.
 23-Penser à faire apparaître les erreurs avec animation
 24-Résoudre le problème de caractères d'enregsitrement qui devient invalide dans l'enregsitrement Mysql
 25-Eviter les recopies de code header footer code javascript signature dans deux pagefinale...
-26-Bien arranger l'affichage du contrat dûment rempli
-
+26-Bien arranger l'affichage du contrat dûment rempli, mettre les bordures, arranger l'alignement vertical des elements etc...
+27-Faisons cette application en telle sorte que n'importequelle entreprise puisse s'inscrire et enregistrer ses formulaires.
+28-Regarder un peu pourquoi les display flex ne marche pas au niveau des signatures
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
 Hermann      pokatchoneng@gmail.com      vanamos           superviseur

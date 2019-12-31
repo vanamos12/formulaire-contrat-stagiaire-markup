@@ -25,6 +25,25 @@
     color:green;
 }
 
+.blue{
+    color:blue;
+}
+
+.bold{
+    font-weight: bold;
+}
+.partiec table td, .partied table td{
+    width:100%;
+}
+.partiea table td, .partieb table td {
+    width: 50%;
+}
+.partieg{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 canvas {
     background:#eee; 
     display:block; 
