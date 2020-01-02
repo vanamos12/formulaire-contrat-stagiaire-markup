@@ -1,3 +1,6 @@
+<?php
+    include "db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,9 @@
 </head>
 <body>
     <div class="container">
+    <?php
+        include "include/banner.php"
+    ?>
     <div class="title">
             <h1>Contrat de stage</h1>
             <h2>Partie E - Planification de l'encadrement / supervision du stagiaire</h2>

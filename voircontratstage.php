@@ -133,7 +133,7 @@
 
             $rowd = $queryd->fetch();
         ?>
-        <h2 class="blue">Partie B - Identification du stagiaire </h2>
+        <h2 class="blue">Partie D - Coordonnées stagiaire</h2>
         <table>
             
             <tr>

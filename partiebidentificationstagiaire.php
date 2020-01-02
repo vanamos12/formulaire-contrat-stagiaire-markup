@@ -92,6 +92,10 @@
 </head>
 <body>
 <div class="container">
+        <?php
+            include "include/banner.php"
+        ?>
+        
         <div class="title">
             <h1>Contrat de stage</h1>
             <h2>Partie B - Identification du stagiaire</h2>

@@ -1,8 +1,8 @@
-<div class="banner">
-    <div class="pull-left">
+<div class="banner clearfix">
+    <div class="float-left">
         <img src="img/logo.png" alt="logo markup"/>
     </div>
-    <div class="pull-right">
+    <div class="float-right mt-2">
         <span class="blue">
             <?php 
                 if (isset($_SESSION["utilisateur"])){

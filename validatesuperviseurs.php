@@ -21,7 +21,7 @@
             <h2>Validation des superviseurs</h2>
         </div>
         <div class="list-superviseurs">
-        <a href="listecontratsuperviseur.php"  class="btn btn-success" >Liste des contrats</a> 
+        <a href="listecontratsuperviseur.php"  class="btn btn-success mb-2" >Liste des contrats</a> 
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 
             <thead>

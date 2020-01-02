@@ -36,6 +36,7 @@ et les valider.
 30-Il faut que le contrat soit modifiable, uniquement lorsqu'on signe qu'il est câlé
 31-Il faut un endroit ou on peut ajouter des informations complémentaires au formulaire signé
 32-Penser qu'à index.php si la session est déjà présente, rediriger vers les differents pages de connexion
+33- Penser à empêcher les retour du navigateur vers les pages précédentes si on les a déjà remplies
 
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
@@ -48,4 +49,13 @@ https://github.com/szimek/signature_pad
 Status d'un contrat
 -En attente stagiaire
 -En attente superviseur
--Signé
+-Complete
+
+
+Diplome qu'on a
+Trier les serieux des malhonnêtes pour valider 
+Le superadministrateur valide selon les disponibilités
+JOindre photocopie carte nationale identitié
+Photo totale
+Photocopie des diplomes le plus elevé
+CV photo recente 4*4

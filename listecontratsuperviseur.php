@@ -13,6 +13,9 @@
 </head>
 <body>
 <div class="container">
+        <?php
+            include "include/banner.php"
+        ?>
         <div class="title">
             <h1>Contrat de stage markup</h1>
             <h2>Liste des contrats stagiaires</h2>

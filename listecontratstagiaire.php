@@ -13,12 +13,16 @@
 </head>
 <body>
 <div class="container">
+        <?php
+            include "include/banner.php"
+        ?>
+
         <div class="title">
             <h1>Contrat de stage markup</h1>
             <h2>Liste des contrats stagiaires</h2>
         </div>
         <div class="list-contrats-stagiaires">
-        <a href="nouveaucontratstagiaire.php" class="btn btn-success">Créer un nouveau contrat</a>
+        <a href="nouveaucontratstagiaire.php" class="btn btn-success mb-2">Créer un nouveau contrat</a>
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 
             <thead>

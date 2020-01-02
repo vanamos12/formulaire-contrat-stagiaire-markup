@@ -49,6 +49,9 @@
 </head>
 <body>
 <div class="container">
+        <?php
+            include "include/banner.php"
+        ?>
         <div class="title">
             <h1>Contrat de stage</h1>
             <h2>Partie C - Mandat et tâches du stagiaire</h2>
