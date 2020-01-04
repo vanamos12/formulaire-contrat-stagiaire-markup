@@ -4,5 +4,12 @@
     define("LAST_ETAPE", 0);
     define("EN_ATTENTE_STAGIAIRE", "En attente stagiaire");
     define("EN_ATTENTE_SUPERVISEUR", "En attente superviseur");
-    define("COMPLETE", "Complete")
+    define("COMPLETE", "Complete");
+    define("UTILISATEUR", "utilisateur");
+    define("STAGIAIRE", "stagiaire");
+    define("SUPERVISEUR", "superviseur");
+    define("SUPERADMINISTRATEUR", "superadministrateur");
+    define("ADMINISTRATEUR", "administrateur");
+    
+
 ?>

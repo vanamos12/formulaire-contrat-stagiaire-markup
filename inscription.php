@@ -8,7 +8,13 @@
         }
         return true;
     }
-    function validateInscription($nom, $email, $motdepasse){
+    function validateTelephone($telephone){
+        if (!preg_match("/^[0-9]+$/", $telephone)){
+            return false;
+        }
+        return true;
+    }
+    function validateInscription($nom, $email, $telephone, $motdepasse){
         $errors = "<ul class='red'>";
         if (strcmp($nom, "")==0){
             $errors .= "<li>Le nom ne doit pas être vide.</li>";
@@ -19,6 +25,9 @@
         if (!validateEmail($email)){
             $errors .= "<li>L'adresse mail doit être valide.</li>";
         }
+        if (!validateTelephone($telephone)){
+            $errors .= "<li>Le téléphone doit être une suite de chiffres.</li>";
+        }
         $errors .= "</ul>";
         return $errors;
     }
@@ -27,10 +36,11 @@
         $email = $_POST["email"];
         $motdepasse = $_POST["motdepasse"];
         $poste = $_POST["poste"];
-        $errors = validateInscription($nom, $email, $motdepasse);
+        $telephone = $_POST["telephone"];
+        $errors = validateInscription($nom, $email, $telephone, $motdepasse);
         if (strcmp($errors, "<ul class='red'></ul>") == 0){
             // We safeguard information in the database
-            $stmt = $connection->prepare("INSERT INTO utilisateurs(nom, email, motdepasse, poste, valide) VALUES(:nom, :email, :motdepasse, :poste, :valide)");
+            $stmt = $connection->prepare("INSERT INTO utilisateurs(nom, email, telephone, motdepasse, poste, valide) VALUES(:nom, :email, :telephone,:motdepasse, :poste, :valide)");
             $valide = "oui";
             if (strcmp($poste, "superviseur") == 0){
                 $valide = "non";
@@ -38,6 +48,7 @@
             $data = [
                 "nom"=>$nom,
                 "email"=>$email,
+                "telephone"=>$telephone,
                 "motdepasse"=>md5($motdepasse),
                 "poste"=>$poste,
                 "valide"=>$valide
@@ -54,12 +65,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contrat de stage Markup</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <?php
+        include "include/head.php";
+    ?>
 </head>
 <body>
     <div class="container">
@@ -86,6 +94,13 @@
                         Mot de passe : 
                     </label>
                     <input class="form-control" type="password" name="motdepasse" id="motdepasse" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="telephone">
+                        T&eacute;l&eacute;phone : 
+                    </label>
+                    <input class="form-control" type="text" name="telephone" id="telephone" />
                     
                 </div>
                 <div class="form-group">

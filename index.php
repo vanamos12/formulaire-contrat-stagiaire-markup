@@ -13,15 +13,15 @@
         $stmt->execute($data);
         if ($row = $stmt->fetch()){
             $_SESSION['utilisateur'] = $row;
-            if (strcmp($row['poste'], "superadministrateur") == 0){
+            if (strcmp($row['poste'], SUPERADMINISTRATEUR) == 0){
                 $successConnexion = "<p class='green'>Utilisateur superadmnistrateur detecté.</p>";
                 //$_SESSION['poste'] = "superadministrateur";
                 header("location:validatesuperviseurs.php");
-            }else if(strcmp($row['poste'], "stagiaire")==0){
+            }else if(strcmp($row['poste'], STAGIAIRE)==0){
                 $successConnexion = "<p class='green'>Utilisateur stagiaire detecté.</p>";
                 //$_SESSION['poste'] = "stagiaire";
                 header("location:listecontratstagiaire.php");
-            }else if (strcmp($row['poste'], "superviseur")==0){
+            }else if (strcmp($row['poste'], SUPERVISEUR)==0){
                 if (strcmp($row['valide'], "oui") == 0){
                     header("location:listecontratsuperviseur.php");
                 }else{
@@ -36,12 +36,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Contrat de stage Markup</title>
+    <?php
+        include "include/head.php";
+    ?>
 </head>
 <body>
     <div class="container">
