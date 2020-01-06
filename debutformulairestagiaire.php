@@ -1,7 +1,7 @@
 <?php
     include "db.php";
     if (isset($_POST["soumettre"])){
-        $idStagiaire = $_SESSION['utilisateur']['idUtilisateur'];
+        $idContrat = $_SESSION['etape']['idContrat'];
         $typeFormation = "";
         $formation = "";
 
@@ -19,11 +19,19 @@
             }    
         }
         $data = [
-            "idStagiaire"=>$idStagiaire,
             "typeFormation"=>$typeFormation,
-            "formation"=>$formation
+            "formation"=>$formation,
+            "idContrat"=>$idContrat
         ];
-        var_dump($data);
+        $stmt = $connection->prepare("INSERT INTO typestagiaire(idContrat, typeFormation, formation)
+                                            VALUES(:idContrat, :typeFormation, :formation)");
+        if ($stmt->execute($data)){
+            $succesInscription = "<p class='green'>Enregistrement effectué, vous pouvez continuer.</p>";
+            header("location:continuerremplircontratstage.php");
+        }else{
+            $succesInscription = "<p class='red'>Echec de l'enregistrement, veuillez réessayer.</p>"; 
+        }
+        
     }
     
 
@@ -37,6 +45,9 @@
 </head>
 <body>
     <div class="container">
+        <?php
+            include "include/banner.php";
+        ?>
         <div class="title">
             <h1>MARKUP CONSULTING</h1>
             <h2>Que voulez-vous faire à Markup</h2>

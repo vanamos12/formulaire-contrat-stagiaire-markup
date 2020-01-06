@@ -39,6 +39,7 @@ et les valider.
 33- Penser à empêcher les retour du navigateur vers les pages précédentes si on les a déjà remplies
 34- Ne rendre visible que les formulaire pour lesquels on a complété la première partie pour le superviseur
     (Mettre cela en information chez les stagiaires et superviseurs)
+35- Vérifier que la taille des fichiers téléchargés n'est pas plus grande QUE 10Mo
 Name         Email                       Password          role
 Foloum       foloum@groupemarkup.com     fidele            superadministrateur
 Hermann      pokatchoneng@gmail.com      vanamos           superviseur

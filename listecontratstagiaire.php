@@ -26,7 +26,7 @@
 
             <tr>
 
-                <th>Nom Contrat</th>
+                <th>Num&eacute;ro Dossier</th>
 
                 <th>Id Contrat</th>
 
@@ -60,7 +60,7 @@
             
             <tr>
             
-                <td><?php echo $row['nomcontrat']; ?></td>
+                <td><?php echo $row['numerodossier']; ?></td>
 
                 <td><?php echo $row['idContrat']; ?></td>
 

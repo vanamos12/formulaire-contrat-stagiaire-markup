@@ -1,6 +1,8 @@
 <?php 
-    define("BEGIN_ETAPE_STAGIAIRE", 1);
+    define("BEGIN_ETAPE_STAGIAIRE", 7);
     define("BEGIN_ETAPE_SUPERVISEUR", 4);
+    define("MIN_NUMERO_DOSSIER", 100000);
+    define("MAX_NUMERO_DOSSIER", 999999);
     define("LAST_ETAPE", 0);
     define("EN_ATTENTE_STAGIAIRE", "En attente stagiaire");
     define("EN_ATTENTE_SUPERVISEUR", "En attente superviseur");
@@ -26,5 +28,6 @@
     define("INFOGRAPHIE_STAGE", "Infographie");
     define("PHOTOGRAPHIE", "Photographie");
     define("COMMUNITY_MANAGEMENT_STAGE", "Community Management");
-
+    define("AUTHORIZED_EXTENSION_FILES_IMAGE", ["pdf", "jpg", "jpeg", "png", "gif", "webp"]);
+    define("AUTHORIZED_EXTENSION_FILES_DOCUMENTS", ["pdf", "doc", "docx"]);
 ?>
